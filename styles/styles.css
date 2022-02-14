@@ -1,0 +1,113 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #046785;
+    margin: 0;
+    height: 100%;
+    /* padding: 100px; */
+}
+
+li {
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+    padding: 10px;
+    margin-right: 10px;
+    color: #d4f0eb;
+    font-size: medium;
+    font-weight: 700;
+}
+
+p {
+    margin: 10px;
+}
+.numpad,
+.controls,
+.operator {
+    background-color: #42a09094;
+    border: 2px solid #23f37a;
+    border-radius: 50%;
+    box-shadow: #23f37a 1px 1px 0 0;
+    color: #d4f0eb;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 10px;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+}
+.controls {
+    width: 120px;
+    border-radius: 20px;
+}
+button:active {
+    box-shadow: #d3bd9b 2px 2px 0 0;
+    transform: translate(2px, 2px);
+}
+.numpad:hover {
+    background-color: #8970e2;
+}
+.controls:hover {
+    background-color: #da4848;
+}
+
+.buttonLayout {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+}
+
+.grid-col-span-2 {
+    grid-column: span 2;
+}
+
+.operator:hover {
+    background-color: #28ac33;
+}
+
+.calcBody {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 270px;
+    height: auto;
+    border: 2px solid #23f37a;
+    padding: 10px;
+    margin-top: 50px;
+    gap: 10px;
+    border-radius: 20px;
+    background-color: #346b9e;
+    box-shadow: #23f37a 4px 4px 0 0;
+}
+
+.calcDisplay {
+    box-sizing: border-box;
+    direction: rtl;
+    box-shadow: #23f37a 4px 4px 0 0;
+    background-color: #23f37a;
+    font-weight: 400;
+    font-size: 1.5em;
+    margin-top: 10px;
+    width: 90%;
+    height: 85px;
+    border: 2px solid #23f37a;
+    border-radius: 20px;
+    color: #2a2e2d;
+}
+
+.footer {
+    padding: 20px;
+    color: #d4f0eb;
+    justify-content: center;
+    align-items: flex-end;
+    font-weight: bold;
+    margin-top: 50px;
+}
