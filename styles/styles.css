@@ -14,7 +14,7 @@ li {
 }
 a {
     text-decoration: none;
-    padding: 10px;
+    padding: 0px;
     margin-right: 10px;
     color: #d4f0eb;
     font-size: medium;
@@ -26,7 +26,8 @@ p {
 }
 .numpad,
 .controls,
-.operator {
+.operatorButton,
+ .equalSign{
     background-color: #42a09094;
     border: 2px solid #23f37a;
     border-radius: 50%;
@@ -69,7 +70,7 @@ button:active {
     grid-column: span 2;
 }
 
-.operator:hover {
+.operatorButton:hover {
     background-color: #28ac33;
 }
 
@@ -90,7 +91,7 @@ button:active {
 
 .calcDisplay {
     box-sizing: border-box;
-    direction: rtl;
+    /* direction: rtl; */
     box-shadow: #23f37a 4px 4px 0 0;
     background-color: #23f37a;
     font-weight: 400;
