@@ -164,5 +164,9 @@ operatorButtons.forEach((operatorButton) => {
 });
 
 equalSign.addEventListener("click", () => {
+    // check if the display is empty and do nothing if it is thereby avoiding a NAN error
+    if (!input || !userInput.textContent) {
+        return;
+    }
     determineResult();
 });
