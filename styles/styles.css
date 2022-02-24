@@ -6,7 +6,6 @@ body {
     background-color: #046785;
     margin: 0;
     height: 100%;
-    /* padding: 100px; */
 }
 
 li {
@@ -27,7 +26,7 @@ p {
 .numpad,
 .controls,
 .operatorButton,
- .equalSign{
+.equalSign {
     background-color: #42a09094;
     border: 2px solid #23f37a;
     border-radius: 50%;
@@ -45,6 +44,14 @@ p {
     user-select: none;
     -webkit-user-select: none;
 }
+.userinput {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    font-size: 0.7em;
+    font-family: "Press Start 2P", cursive;
+}
+
 .controls {
     width: 120px;
     border-radius: 20px;
@@ -78,7 +85,7 @@ button:active {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 270px;
+    width: 300px;
     height: auto;
     border: 2px solid #23f37a;
     padding: 10px;
@@ -90,6 +97,8 @@ button:active {
 }
 
 .calcDisplay {
+    display: flex;
+    flex-wrap: wrap;
     box-sizing: border-box;
     /* direction: rtl; */
     box-shadow: #23f37a 4px 4px 0 0;
@@ -98,7 +107,7 @@ button:active {
     font-size: 1.5em;
     margin-top: 10px;
     width: 90%;
-    height: 85px;
+    min-height: 51px;
     border: 2px solid #23f37a;
     border-radius: 20px;
     color: #2a2e2d;
