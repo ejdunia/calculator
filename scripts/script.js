@@ -22,7 +22,6 @@ const operate = function (operator, num1, num2) {
 
 // display portion
 const userInput = document.querySelector(".userinput");
-// const resultsDisplay = document.querySelector(".display");
 
 //operators and button
 const numpad = document.querySelectorAll(".numpad");
@@ -31,6 +30,7 @@ const equalSign = document.querySelector(".equalSign");
 const plusSign = document.querySelector(".plusSign");
 const clear = document.querySelector(".cls");
 const deletus = document.querySelector(".del");
+const dot = document.querySelector(".dot");
 
 let val1;
 let val2;
@@ -50,6 +50,17 @@ function checkoperateStack() {
         val1 = +operateStack.shift();
         operator = operateStack.shift();
         val2 = +operateStack.shift();
+    }
+}
+
+function includeDot() {
+    if (
+        !userInput.textContent.split(" ")[0].includes(".") &&
+        !userInput.textContent.split(" ")[2]
+    ) {
+        userInput.textContent += dot.textContent;
+    } else if (!userInput.textContent.split(" ")[2].includes(".")) {
+        userInput.textContent += dot.textContent;
     }
 }
 
@@ -103,7 +114,7 @@ function checkStringForOperator() {
     }
 }
 function determineResult() {
-    if (checkLastOperator()) {
+    if (checkLastOperator() || userInput.textContent.slice(-1) == ".") {
         checkoperateStack();
         return;
     } else {
@@ -119,7 +130,6 @@ clear.addEventListener("click", () => {
     input = "";
     userInput.textContent = "";
     result = "";
-    // resultsDisplay.textContent = "";
 });
 
 deletus.addEventListener("click", () => {
@@ -139,12 +149,18 @@ numpad.forEach((num) => {
     });
 });
 
+dot.addEventListener("click", includeDot);
+
 operatorButtons.forEach((operatorButton) => {
     operatorButton.addEventListener("click", () => {
         checkStringForOperator();
         // if theres no other input then dont do anything else there will be errors.
 
-        if (!input || !userInput.textContent) {
+        if (
+            !input ||
+            !userInput.textContent ||
+            userInput.textContent.slice(-1) == "."
+        ) {
             return;
         } else if (checkLastOperator()) {
             // checks if theres an operator at the end of the input.textcontent, if there is then repace it else continue normal append to the string;
@@ -164,7 +180,7 @@ operatorButtons.forEach((operatorButton) => {
 });
 
 equalSign.addEventListener("click", () => {
-    // check if the display is empty and do nothing if it is thereby avoiding a NAN error
+    // check if the display is empty and do nothing if it is avoiding a NAN error
     if (!input || !userInput.textContent) {
         return;
     }
